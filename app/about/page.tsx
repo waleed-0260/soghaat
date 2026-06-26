@@ -2,15 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
+import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: {},
   show: { transition: { staggerChildren: 0.1 } },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, y: 24 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
 };
@@ -173,7 +173,7 @@ export default function AboutPage() {
             ].map((feat) => (
               <motion.div
                 key={feat.title}
-                variants={prefersReducedMotion ? undefined : itemVariants}
+                // variants={prefersReducedMotion ? undefined : itemVariants}
                 className="bg-soghaat-surface rounded-2xl p-7 border border-soghaat-border text-center hover:border-soghaat-gold/40 transition-colors"
               >
                 <span className="text-5xl mb-5 block" aria-hidden>
@@ -209,7 +209,7 @@ export default function AboutPage() {
             ].map((stat) => (
               <motion.div
                 key={stat.label}
-                variants={prefersReducedMotion ? undefined : itemVariants}
+                // variants={prefersReducedMotion ? undefined : itemVariants}
                 className="bg-soghaat-surface rounded-2xl p-6 border border-soghaat-border text-center"
               >
                 <p className="font-display text-3xl md:text-4xl text-soghaat-gold mb-1">
